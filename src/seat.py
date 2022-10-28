@@ -10,10 +10,12 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-list=[]
+list=[1,2,10,11]
+count=0
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
+        global list
         Dialog.setObjectName("请选择座位")
         Dialog.resize(722, 610)
         self.pushButton_01 = QtWidgets.QPushButton(Dialog)
@@ -347,60 +349,329 @@ class Ui_Dialog(object):
         self.pushButton_2.setGeometry(QtCore.QRect(540, 520, 93, 28))
         self.pushButton_2.setObjectName("pushButton_2")
 
-        self.pushButton_01.clicked.connect(self.clickButton_01)
-        self.pushButton_02.clicked.connect(self.clickButton_02)
-        self.pushButton_03.clicked.connect(self.clickButton_03)
-        self.pushButton_04.clicked.connect(self.clickButton_04)
-        self.pushButton_05.clicked.connect(self.clickButton_05)
-        self.pushButton_06.clicked.connect(self.clickButton_06)
-        self.pushButton_07.clicked.connect(self.clickButton_07)
-        self.pushButton_08.clicked.connect(self.clickButton_08)
-        self.pushButton_09.clicked.connect(self.clickButton_09)
-        self.pushButton_10.clicked.connect(self.clickButton_10)
-        self.pushButton_11.clicked.connect(self.clickButton_11)
-        self.pushButton_12.clicked.connect(self.clickButton_12)
-        self.pushButton_13.clicked.connect(self.clickButton_13)
-        self.pushButton_14.clicked.connect(self.clickButton_14)
-        self.pushButton_15.clicked.connect(self.clickButton_15)
-        self.pushButton_16.clicked.connect(self.clickButton_16)
-        self.pushButton_17.clicked.connect(self.clickButton_17)
-        self.pushButton_18.clicked.connect(self.clickButton_18)
-        self.pushButton_19.clicked.connect(self.clickButton_19)
-        self.pushButton_20.clicked.connect(self.clickButton_20)
-        self.pushButton_21.clicked.connect(self.clickButton_21)
-        self.pushButton_22.clicked.connect(self.clickButton_22)
-        self.pushButton_23.clicked.connect(self.clickButton_23)
-        self.pushButton_24.clicked.connect(self.clickButton_24)
-        self.pushButton_25.clicked.connect(self.clickButton_25)
-        self.pushButton_26.clicked.connect(self.clickButton_26)
-        self.pushButton_27.clicked.connect(self.clickButton_27)
-        self.pushButton_28.clicked.connect(self.clickButton_28)
-        self.pushButton_29.clicked.connect(self.clickButton_29)
-        self.pushButton_30.clicked.connect(self.clickButton_30)
-        self.pushButton_31.clicked.connect(self.clickButton_31)
-        self.pushButton_32.clicked.connect(self.clickButton_32)
-        self.pushButton_33.clicked.connect(self.clickButton_33)
-        self.pushButton_34.clicked.connect(self.clickButton_34)
-        self.pushButton_35.clicked.connect(self.clickButton_35)
-        self.pushButton_36.clicked.connect(self.clickButton_36)
-        self.pushButton_37.clicked.connect(self.clickButton_37)
-        self.pushButton_38.clicked.connect(self.clickButton_38)
-        self.pushButton_39.clicked.connect(self.clickButton_39)
-        self.pushButton_40.clicked.connect(self.clickButton_40)
-        self.pushButton_41.clicked.connect(self.clickButton_41)
-        self.pushButton_42.clicked.connect(self.clickButton_42)
-        self.pushButton_43.clicked.connect(self.clickButton_43)
-        self.pushButton_44.clicked.connect(self.clickButton_44)
-        self.pushButton_45.clicked.connect(self.clickButton_45)
-        self.pushButton_46.clicked.connect(self.clickButton_46)
-        self.pushButton_47.clicked.connect(self.clickButton_47)
-        self.pushButton_48.clicked.connect(self.clickButton_48)
-        self.pushButton_49.clicked.connect(self.clickButton_49)
-        self.pushButton_50.clicked.connect(self.clickButton_50)
-        self.pushButton_51.clicked.connect(self.clickButton_51)
-        self.pushButton_52.clicked.connect(self.clickButton_52)
-        self.pushButton_53.clicked.connect(self.clickButton_53)
-        self.pushButton_54.clicked.connect(self.clickButton_54)
+        if 1 in list:
+            self.pushButton_01.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_01.clicked.connect(self.clickButton_01)
+
+        if 2 in list:
+            self.pushButton_02.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_02.clicked.connect(self.clickButton_02)
+
+        if 3 in list:
+            self.pushButton_03.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_03.clicked.connect(self.clickButton_03)
+
+        if 4 in list:
+            self.pushButton_04.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_04.clicked.connect(self.clickButton_04)
+
+        if 5 in list:
+            self.pushButton_05.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_05.clicked.connect(self.clickButton_05)
+
+        if 6 in list:
+            self.pushButton_06.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_06.clicked.connect(self.clickButton_06)
+
+        if 7 in list:
+            self.pushButton_07.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_07.clicked.connect(self.clickButton_07)
+
+        if 8 in list:
+            self.pushButton_08.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_08.clicked.connect(self.clickButton_08)
+
+        if 9 in list:
+            self.pushButton_09.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_09.clicked.connect(self.clickButton_09)
+
+        if 10 in list:
+            self.pushButton_10.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_10.clicked.connect(self.clickButton_10)
+
+        if 11 in list:
+            self.pushButton_11.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_11.clicked.connect(self.clickButton_11)
+
+        if 12 in list:
+            self.pushButton_12.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_12.clicked.connect(self.clickButton_12)
+
+        if 13 in list:
+            self.pushButton_13.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_13.clicked.connect(self.clickButton_13)
+
+        if 14 in list:
+            self.pushButton_14.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_14.clicked.connect(self.clickButton_14)
+
+        if 15 in list:
+            self.pushButton_15.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_15.clicked.connect(self.clickButton_15)
+
+        if 16 in list:
+            self.pushButton_16.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_16.clicked.connect(self.clickButton_16)
+
+        if 17 in list:
+            self.pushButton_17.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_17.clicked.connect(self.clickButton_17)
+
+        if 18 in list:
+            self.pushButton_18.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_18.clicked.connect(self.clickButton_18)
+
+        if 19 in list:
+            self.pushButton_19.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_19.clicked.connect(self.clickButton_19)
+
+        if 20 in list:
+            self.pushButton_20.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_20.clicked.connect(self.clickButton_20)
+
+        if 21 in list:
+            self.pushButton_21.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_21.clicked.connect(self.clickButton_21)
+
+        if 22 in list:
+            self.pushButton_22.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_22.clicked.connect(self.clickButton_22)
+
+        if 23 in list:
+            self.pushButton_23.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_23.clicked.connect(self.clickButton_23)
+
+        if 24 in list:
+            self.pushButton_24.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_24.clicked.connect(self.clickButton_24)
+
+        if 25 in list:
+            self.pushButton_25.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_25.clicked.connect(self.clickButton_25)
+
+        if 26 in list:
+            self.pushButton_26.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_26.clicked.connect(self.clickButton_26)
+
+        if 27 in list:
+            self.pushButton_27.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_27.clicked.connect(self.clickButton_27)
+
+        if 28 in list:
+            self.pushButton_28.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_28.clicked.connect(self.clickButton_28)
+
+        if 29 in list:
+            self.pushButton_29.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_29.clicked.connect(self.clickButton_29)
+
+        if 30 in list:
+            self.pushButton_30.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_30.clicked.connect(self.clickButton_30)
+
+        if 31 in list:
+            self.pushButton_31.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_31.clicked.connect(self.clickButton_31)
+
+        if 32 in list:
+            self.pushButton_32.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_32.clicked.connect(self.clickButton_32)
+
+        if 33 in list:
+            self.pushButton_33.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_33.clicked.connect(self.clickButton_33)
+
+        if 34 in list:
+            self.pushButton_34.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_34.clicked.connect(self.clickButton_34)
+
+        if 35 in list:
+            self.pushButton_35.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_35.clicked.connect(self.clickButton_35)
+
+        if 36 in list:
+            self.pushButton_36.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_36.clicked.connect(self.clickButton_36)
+
+        if 37 in list:
+            self.pushButton_37.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_37.clicked.connect(self.clickButton_37)
+
+        if 38 in list:
+            self.pushButton_38.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_38.clicked.connect(self.clickButton_38)
+
+        if 39 in list:
+            self.pushButton_39.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_39.clicked.connect(self.clickButton_39)
+
+        if 40 in list:
+            self.pushButton_40.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_40.clicked.connect(self.clickButton_40)
+
+        if 41 in list:
+            self.pushButton_41.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_41.clicked.connect(self.clickButton_41)
+
+        if 42 in list:
+            self.pushButton_42.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_42.clicked.connect(self.clickButton_42)
+
+        if 43 in list:
+            self.pushButton_43.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_43.clicked.connect(self.clickButton_43)
+
+        if 44 in list:
+            self.pushButton_44.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_44.clicked.connect(self.clickButton_44)
+
+        if 45 in list:
+            self.pushButton_45.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_45.clicked.connect(self.clickButton_45)
+
+        if 46 in list:
+            self.pushButton_46.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_46.clicked.connect(self.clickButton_46)
+
+        if 47 in list:
+            self.pushButton_47.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_47.clicked.connect(self.clickButton_47)
+
+        if 48 in list:
+            self.pushButton_48.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_48.clicked.connect(self.clickButton_48)
+
+        if 49 in list:
+            self.pushButton_49.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_49.clicked.connect(self.clickButton_49)
+
+        if 50 in list:
+            self.pushButton_50.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_50.clicked.connect(self.clickButton_50)
+
+        if 51 in list:
+            self.pushButton_51.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_51.clicked.connect(self.clickButton_51)
+
+        if 52 in list:
+            self.pushButton_52.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_52.clicked.connect(self.clickButton_52)
+
+        if 53 in list:
+            self.pushButton_53.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_53.clicked.connect(self.clickButton_53)
+
+        if 54 in list:
+            self.pushButton_54.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_54.clicked.connect(self.clickButton_54)
 
 
 
@@ -477,701 +748,971 @@ class Ui_Dialog(object):
 
     def clickButton_01(self):
         global list
+        global count
         if 1 in list:
             list.remove(1)
             self.pushButton_01.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_01.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:##FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(1)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_02(self):
         global list
+        global count
         if 2 in list:
             list.remove(2)
             self.pushButton_02.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_02.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:##FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(2)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_03(self):
         global list
+        global count
         if 3 in list:
             list.remove(3)
             self.pushButton_03.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_03.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:##FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(3)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_04(self):
         global list
+        global count
         if 4 in list:
             list.remove(4)
             self.pushButton_04.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_04.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:##FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(4)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_05(self):
         global list
+        global count
         if 5 in list:
             list.remove(5)
             self.pushButton_05.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_05.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:##FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(5)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_06(self):
         global list
+        global count
         if 6 in list:
             list.remove(6)
             self.pushButton_06.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_06.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:##FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(6)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_07(self):
         global list
+        global count
         if 7 in list:
             list.remove(7)
             self.pushButton_07.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_07.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:##FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(7)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_08(self):
         global list
+        global count
         if 8 in list:
             list.remove(8)
             self.pushButton_08.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_08.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:##FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(8)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_09(self):
         global list
+        global count
         if 9 in list:
             list.remove(9)
             self.pushButton_09.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_09.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:##FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(9)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_10(self):
         global list
+        global count
         if 10 in list:
             list.remove(10)
             self.pushButton_10.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_10.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(10)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_11(self):
         global list
+        global count
         if 11 in list:
             list.remove(11)
             self.pushButton_11.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_11.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(11)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_12(self):
         global list
+        global count
         if 12 in list:
             list.remove(12)
             self.pushButton_12.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_12.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(12)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_13(self):
         global list
+        global count
         if 13 in list:
             list.remove(13)
             self.pushButton_13.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_13.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(13)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_14(self):
         global list
+        global count
         if 14 in list:
             list.remove(14)
             self.pushButton_14.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_14.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(14)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_15(self):
         global list
+        global count
         if 15 in list:
             list.remove(15)
             self.pushButton_15.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_15.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(15)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_16(self):
         global list
+        global count
         if 16 in list:
             list.remove(16)
             self.pushButton_16.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_16.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(16)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_17(self):
         global list
+        global count
         if 17 in list:
             list.remove(17)
             self.pushButton_17.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_17.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(17)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_18(self):
         global list
+        global count
         if 18 in list:
             list.remove(18)
             self.pushButton_18.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_18.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(18)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_19(self):
         global list
+        global count
         if 19 in list:
             list.remove(19)
             self.pushButton_19.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_19.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(19)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_20(self):
         global list
+        global count
         if 20 in list:
             list.remove(20)
             self.pushButton_20.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_20.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(20)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_21(self):
         global list
+        global count
         if 21 in list:
             list.remove(21)
             self.pushButton_21.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_21.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(21)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_22(self):
         global list
+        global count
         if 22 in list:
             list.remove(22)
             self.pushButton_22.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_22.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(22)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_23(self):
         global list
+        global count
         if 23 in list:
             list.remove(23)
             self.pushButton_23.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_23.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(23)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_24(self):
         global list
+        global count
         if 24 in list:
             list.remove(24)
             self.pushButton_24.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_24.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(24)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_25(self):
         global list
+        global count
         if 25 in list:
             list.remove(25)
             self.pushButton_25.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_25.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(25)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_26(self):
         global list
+        global count
         if 26 in list:
             list.remove(26)
             self.pushButton_26.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_26.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(26)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_27(self):
         global list
+        global count
         if 27 in list:
             list.remove(27)
             self.pushButton_27.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_27.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(27)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_28(self):
         global list
+        global count
         if 28 in list:
             list.remove(28)
             self.pushButton_28.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_28.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(28)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_29(self):
         global list
+        global count
         if 29 in list:
             list.remove(29)
             self.pushButton_29.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_29.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(29)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_30(self):
         global list
+        global count
         if 30 in list:
             list.remove(30)
             self.pushButton_30.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_30.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(30)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_31(self):
         global list
+        global count
         if 31 in list:
             list.remove(31)
             self.pushButton_31.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_31.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(31)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_32(self):
         global list
+        global count
         if 32 in list:
             list.remove(32)
             self.pushButton_32.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_32.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(32)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_33(self):
         global list
+        global count
         if 33 in list:
             list.remove(33)
             self.pushButton_33.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_33.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(33)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_34(self):
         global list
+        global count
         if 34 in list:
             list.remove(34)
             self.pushButton_34.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_34.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(34)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_35(self):
         global list
+        global count
         if 35 in list:
             list.remove(35)
             self.pushButton_35.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_35.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(35)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_36(self):
         global list
+        global count
         if 36 in list:
             list.remove(36)
             self.pushButton_36.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_36.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(36)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_37(self):
         global list
+        global count
         if 37 in list:
             list.remove(37)
             self.pushButton_37.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_37.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(37)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_38(self):
         global list
+        global count
         if 38 in list:
             list.remove(38)
             self.pushButton_38.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_38.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(38)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_39(self):
         global list
+        global count
         if 39 in list:
             list.remove(39)
             self.pushButton_39.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_39.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(39)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_40(self):
         global list
+        global count
         if 40 in list:
             list.remove(40)
             self.pushButton_40.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_40.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(40)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_41(self):
         global list
+        global count
         if 41 in list:
             list.remove(41)
             self.pushButton_41.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_41.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(41)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_42(self):
         global list
+        global count
         if 42 in list:
             list.remove(42)
             self.pushButton_42.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_42.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(42)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_43(self):
         global list
+        global count
         if 43 in list:
             list.remove(43)
             self.pushButton_43.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_43.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(43)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_44(self):
         global list
+        global count
         if 44 in list:
             list.remove(44)
             self.pushButton_44.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_44.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(44)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_45(self):
         global list
+        global count
         if 45 in list:
             list.remove(45)
             self.pushButton_45.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_45.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(45)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_46(self):
         global list
+        global count
         if 46 in list:
             list.remove(46)
             self.pushButton_46.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_46.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(46)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_47(self):
         global list
+        global count
         if 47 in list:
             list.remove(47)
             self.pushButton_47.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_47.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(47)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_48(self):
         global list
+        global count
         if 48 in list:
             list.remove(48)
             self.pushButton_48.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_48.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(48)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_49(self):
         global list
+        global count
         if 49 in list:
             list.remove(49)
             self.pushButton_49.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_49.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(49)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_50(self):
         global list
+        global count
         if 50 in list:
             list.remove(50)
             self.pushButton_50.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_50.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(50)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_51(self):
         global list
+        global count
         if 51 in list:
             list.remove(51)
             self.pushButton_51.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_51.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(51)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_52(self):
         global list
+        global count
         if 52 in list:
             list.remove(52)
             self.pushButton_52.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_52.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(52)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_53(self):
         global list
+        global count
         if 53 in list:
             list.remove(53)
             self.pushButton_53.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_53.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(53)
             print(list)
+            count = count + 1
+            print(count)
 
 
     def clickButton_54(self):
         global list
+        global count
         if 54 in list:
             list.remove(54)
             self.pushButton_54.setStyleSheet(
                 '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+            count = count - 1
+            print(count)
         else:
             self.pushButton_54.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(54)
-        print(list)
+            print(list)
+            count = count + 1
+            print(count)
