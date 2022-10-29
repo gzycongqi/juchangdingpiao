@@ -9,23 +9,20 @@ cur = connect.cursor()
 print(cur)
 
 
-
-
-
-
 def work():
     global cur
     daylist=[]
     cur.execute("select date from seat")
     for row in cur.fetchall():
         daylist.append(row[0])
+        #print(row[0])
     today = datetime.date.today()
+    #print(daylist)
     day=today
+    #print(day)
     #day = today + datetime.timedelta(days=1)
     for i in range(7):
-        if day in daylist:
-            pass
-        else:
+        if str(day) not in daylist:
             for i in range(0,24,3):
                 time=str(i)+":00"
                 val=(day,time,"[]",54)
