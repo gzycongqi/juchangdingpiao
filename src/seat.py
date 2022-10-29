@@ -10,7 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-list=[1,2,10,11]
+list=[]
 count=0
 
 class Ui_Dialog(object):
