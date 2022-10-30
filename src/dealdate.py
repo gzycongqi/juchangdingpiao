@@ -1,6 +1,6 @@
 import datetime
 import pymysql
-import sqldeal
+
 def connect():
     connect = pymysql.connect(host='localhost',  # 本地数据库
                               user='root',

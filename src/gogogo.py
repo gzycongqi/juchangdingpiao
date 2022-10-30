@@ -7,6 +7,7 @@ from src import seat
 from src import chooseuse
 from src import userlog
 import managerlog
+import queren
 from chooseuse import Ui_Dialog as choose_Ui # 选择界面的库
 from userlog import   Ui_Dialog as log_Ui # 登录界面的库
 from seat import Ui_Dialog as seat_Ui
@@ -45,12 +46,25 @@ class managerlogWindow(QDialog):
         self.managerlog_ui = managerlog.Ui_Dialog()
         self.managerlog_ui.setupUi(self)
 
+class querenWindow(QDialog):
+    def __init__(self):
+        QDialog.__init__(self)
+        self.queren_ui = queren.Ui_Dialog()
+        self.queren_ui.setupUi(self)
+
+def set(self):
+        username=managerlog.managerlog_ui.user.toPlainText()
+        print(username)
+        pas=managerlog.managerlog_ui.password.toPlainText()
+        print(pas)
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     choose = chooseWindow()
     userlog = userlogWindow()
     managerlog=managerlogWindow()
+    queren=querenWindow()
     # 通过toolButton将两个窗体关联
     choosego = choose.choose_ui.pushButton
     choosego.clicked.connect(managerlog.show)
@@ -58,8 +72,10 @@ if __name__ == '__main__':
     userloggo = choose.choose_ui.pushButton_2
     userloggo.clicked.connect(userlog.show)
     userloggo.clicked.connect(choose.close)
-    managertijiao=managerlog.managerlog_ui.pushButton
+    managertijiao=managerlog.managerlog_ui.pushButton_1
     managertijiao.clicked.connect(managerlog.close)
+    managertijiao.clicked.connect(queren.show)
+    managertijiao.clicked.connect(set)
 
     # 显示
     choose.show()

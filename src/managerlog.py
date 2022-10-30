@@ -9,9 +9,10 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 import gogogo
 username=""
-password=""
+pas=""
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -24,11 +25,14 @@ class Ui_Dialog(object):
 
         #提交
         self.pushButton = QtWidgets.QPushButton(Dialog)
-        self.pushButton.setGeometry(QtCore.QRect(70, 480, 101, 32))
+        self.pushButton.setGeometry(QtCore.QRect(100, 480, 101, 32))
         self.pushButton.setObjectName("pushButton")
 
-
-
+        # 登录
+        self.pushButton_1 = QtWidgets.QPushButton(Dialog)
+        self.pushButton_1.setGeometry(QtCore.QRect(100, 350, 101, 32))
+        self.pushButton_1.setObjectName("pushButton_1")
+        self.pushButton_1.clicked.connect(self.clickButton)
 
         self.label = QtWidgets.QLabel(Dialog)
         self.label.setGeometry(QtCore.QRect(120, 100, 111, 51))
@@ -58,5 +62,14 @@ class Ui_Dialog(object):
         self.label.setText(_translate("Dialog", "管理员登录"))
         self.label_2.setText(_translate("Dialog", "请输入用户名"))
         self.label_3.setText(_translate("Dialog", "密码"))
-        self.pushButton.setText(_translate("Dialog", "提交"))
+        self.pushButton.setText(_translate("Dialog", "进入"))
+        self.pushButton_1.setText(_translate("Dialog", "登录"))
 
+    def clickButton(self):
+        # global pas
+        # global username
+        # username=self.user.text()
+        # print(username)
+        # pas=self.password.text()
+        # print(pas)
+        pass
