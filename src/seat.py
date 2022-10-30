@@ -344,10 +344,12 @@ class Ui_Dialog(object):
         self.pushButton = QtWidgets.QPushButton(Dialog)
         self.pushButton.setGeometry(QtCore.QRect(440, 520, 93, 28))
         self.pushButton.setObjectName("pushButton")
+        self.pushButton.clicked.connect(self.clickButton)
 
         self.pushButton_2 = QtWidgets.QPushButton(Dialog)
         self.pushButton_2.setGeometry(QtCore.QRect(540, 520, 93, 28))
         self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_2.clicked.connect(self.clickButton_2)
 
         if 1 in list:
             self.pushButton_01.setStyleSheet(
@@ -1716,3 +1718,9 @@ class Ui_Dialog(object):
             print(list)
             count = count + 1
             print(count)
+
+    def clickButton(self):
+        pass
+
+    def clickButton_2(self):
+        pass

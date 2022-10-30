@@ -5,17 +5,6 @@ def connect():
                               user='root',
                               password='gzy158',
                               db='课程设计',
-                              charset='utf8')  # 服务器名,账户,密码，数据库名称
+                              charset='utf-8')  # 服务器名,账户,密码，数据库名称
     cur = connect.cursor()
-    print(cur)
-
-    # 执行的都是原生SQL语句
-    cur.execute("show tables")
-
-    for row in cur.fetchall():
-        print(row[0])
-
-    connect.commit()
-
-connect()
-
+    return cur,connect
