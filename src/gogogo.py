@@ -8,6 +8,8 @@ from src import chooseuse
 from src import userlog
 import managerlog
 import queren
+import managerwork
+import userwork
 from chooseuse import Ui_Dialog as choose_Ui # 选择界面的库
 from userlog import   Ui_Dialog as log_Ui # 登录界面的库
 from seat import Ui_Dialog as seat_Ui
@@ -46,17 +48,26 @@ class managerlogWindow(QDialog):
         self.managerlog_ui = managerlog.Ui_Dialog()
         self.managerlog_ui.setupUi(self)
 
-class querenWindow(QDialog):
+
+
+
+
+
+class managerworkWindow(QDialog):
     def __init__(self):
         QDialog.__init__(self)
-        self.queren_ui = queren.Ui_Dialog()
-        self.queren_ui.setupUi(self)
+        self.managerwork_ui = managerwork.Ui_Dialog()
+        self.managerwork_ui.setupUi(self)
 
-def set(self):
-        username=managerlog.managerlog_ui.user.toPlainText()
-        print(username)
-        pas=managerlog.managerlog_ui.password.toPlainText()
-        print(pas)
+class userworkWindow(QDialog):
+    def __init__(self):
+        QDialog.__init__(self)
+        self.userwork_ui = userwork.Ui_Dialog()
+        self.userwork_ui.setupUi(self)
+
+
+
+
 
 
 if __name__ == '__main__':
@@ -64,18 +75,31 @@ if __name__ == '__main__':
     choose = chooseWindow()
     userlog = userlogWindow()
     managerlog=managerlogWindow()
-    queren=querenWindow()
+
+    managerwork=managerworkWindow()
+    userwork=userworkWindow()
     # 通过toolButton将两个窗体关联
-    choosego = choose.choose_ui.pushButton
-    choosego.clicked.connect(managerlog.show)
-    choosego.clicked.connect(choose.close)
+    managerloggo = choose.choose_ui.pushButton
+    managerloggo.clicked.connect(managerlog.show)
+    managerloggo.clicked.connect(choose.close)
     userloggo = choose.choose_ui.pushButton_2
     userloggo.clicked.connect(userlog.show)
     userloggo.clicked.connect(choose.close)
-    managertijiao=managerlog.managerlog_ui.pushButton_1
-    managertijiao.clicked.connect(managerlog.close)
-    managertijiao.clicked.connect(queren.show)
-    managertijiao.clicked.connect(set)
+
+    #managerdenglu=managerlog.managerlog_ui.pushButton_1
+
+
+
+    managerjinru=managerlog.managerlog_ui.pushButton
+    managerjinru.clicked.connect(managerwork.show)
+    managerjinru.clicked.connect(managerlog.close)
+
+    userjinru = userlog.userlog_ui.pushButton
+    userjinru.clicked.connect(userwork.show)
+    userjinru.clicked.connect(userlog.close)
+
+
+
 
     # 显示
     choose.show()

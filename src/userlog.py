@@ -9,27 +9,30 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-#import gogogo
-username=""
-password=""
+import pymysql
 
+
+username=""
+pas=""
+success=0
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
+
         Dialog.setObjectName("Dialog")
         Dialog.resize(322, 657)
+        #self.setWindowFlags(QtCore.Qt.WindowMinimizeButtonHint)
 
 
+        #进入
         self.pushButton = QtWidgets.QPushButton(Dialog)
         self.pushButton.setGeometry(QtCore.QRect(100, 480, 101, 32))
         self.pushButton.setObjectName("pushButton")
-        self.pushButton.clicked.connect(self.clickButton)
 
         # 登录
         self.pushButton_1 = QtWidgets.QPushButton(Dialog)
         self.pushButton_1.setGeometry(QtCore.QRect(100, 350, 101, 32))
-        self.pushButton_1.setObjectName("pushButton")
-
-
+        self.pushButton_1.setObjectName("pushButton_1")
+        self.pushButton_1.clicked.connect(self.clickButton)
 
         self.label = QtWidgets.QLabel(Dialog)
         self.label.setGeometry(QtCore.QRect(120, 100, 111, 51))
@@ -56,11 +59,35 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "请登录"))
-        self.label.setText(_translate("Dialog", "用户登录"))
+        self.label.setText(_translate("Dialog", "管理员登录"))
         self.label_2.setText(_translate("Dialog", "请输入用户名"))
         self.label_3.setText(_translate("Dialog", "密码"))
         self.pushButton.setText(_translate("Dialog", "进入"))
         self.pushButton_1.setText(_translate("Dialog", "登录"))
 
     def clickButton(self):
-        pass
+            global pas
+            global username
+            global success
+            username=self.user.toPlainText()
+            print(username)
+            pas=self.password.toPlainText()
+            print(pas)
+            key=[]
+            connect = pymysql.connect(host='localhost',  # 本地数据库
+                                      user='root',
+                                      password='gzy158',
+                                      db='课程设计',
+                                      charset='utf8')  # 服务器名,账户,密码，数据库名称
+            cur = connect.cursor()
+            cur.execute("select * from user")
+            for row in cur.fetchall():
+                key.append((row[0], row[1]))
+            connect.commit()
+            print(key)
+            if (username, pas) in key:
+                self.label.setText( "登录成功")
+                print("ok")
+            else:
+                self.label.setText("登录失败")
+

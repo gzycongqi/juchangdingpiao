@@ -43,20 +43,3 @@ class Ui_Dialog(object):
         self.pushButton.setText(_translate("Dialog", "管理员"))
         self.pushButton_2.setText(_translate("Dialog", "用户"))
 
-    # def clickButton(self):
-    #     app1 = QApplication(sys.argv)
-    #     MainWindow1 = QMainWindow()
-    #     ui = log.Ui_Dialog()
-    #     ui.setupUi(MainWindow1)
-    #     MainWindow1.show()
-    #     # print(list)
-    #     sys.exit(app1.exec_())
-    #
-    # def clickButton_2(self):
-    #     app = QApplication(sys.argv)
-    #     MainWindow = QMainWindow()
-    #     ui = Ui_Dialog()
-    #     ui.setupUi(MainWindow)
-    #     MainWindow.show()
-    #     # print(list)
-    #     sys.exit(app.exec_())

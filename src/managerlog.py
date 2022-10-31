@@ -9,21 +9,21 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import pymysql
+import queren
 
-import gogogo
 username=""
 pas=""
-
+success=0
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
-        global username
-        global password
+
         Dialog.setObjectName("Dialog")
         Dialog.resize(322, 657)
         #self.setWindowFlags(QtCore.Qt.WindowMinimizeButtonHint)
 
 
-        #提交
+        #进入
         self.pushButton = QtWidgets.QPushButton(Dialog)
         self.pushButton.setGeometry(QtCore.QRect(100, 480, 101, 32))
         self.pushButton.setObjectName("pushButton")
@@ -66,10 +66,28 @@ class Ui_Dialog(object):
         self.pushButton_1.setText(_translate("Dialog", "登录"))
 
     def clickButton(self):
-        # global pas
-        # global username
-        # username=self.user.text()
-        # print(username)
-        # pas=self.password.text()
-        # print(pas)
-        pass
+            global pas
+            global username
+            global success
+            username=self.user.toPlainText()
+            print(username)
+            pas=self.password.toPlainText()
+            print(pas)
+            key=[]
+            connect = pymysql.connect(host='localhost',  # 本地数据库
+                                      user='root',
+                                      password='gzy158',
+                                      db='课程设计',
+                                      charset='utf8')  # 服务器名,账户,密码，数据库名称
+            cur = connect.cursor()
+            cur.execute("select * from manager")
+            for row in cur.fetchall():
+                key.append((row[0], row[1]))
+            connect.commit()
+            print(key)
+            if (username, pas) in key:
+                self.label.setText( "登录成功")
+                print("ok")
+            else:
+                self.label.setText("登录失败")
+

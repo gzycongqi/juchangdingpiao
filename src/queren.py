@@ -9,7 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import managerlog
 
+import pymysql
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -18,6 +20,8 @@ class Ui_Dialog(object):
         self.pushButton = QtWidgets.QPushButton(Dialog)
         self.pushButton.setGeometry(QtCore.QRect(130, 110, 151, 61))
         self.pushButton.setObjectName("pushButton")
+        self.pushButton.clicked.connect(self.clickButton)
+
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -25,4 +29,24 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.pushButton.setText(_translate("Dialog", "登录"))
+        self.pushButton.setText(_translate("Dialog", "查看登录状态"))
+
+    def clickButton(self):
+        pas=managerlog.pas
+        username=managerlog.username
+        key=[]
+
+        connect = pymysql.connect(host='localhost',  # 本地数据库
+                                  user='root',
+                                  password='gzy158',
+                                  db='课程设计',
+                                  charset='utf8')  # 服务器名,账户,密码，数据库名称
+        cur = connect.cursor()
+        cur.execute("select * from manager")
+        for row in cur.fetchall():
+            key.append((row[0],row[1]))
+        connect.commit()
+        if (username,pas) in key:
+            self.pushButton.setText("登录成功")
+        else:
+            self.pushButton.setText("登录失败")
