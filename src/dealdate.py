@@ -18,12 +18,11 @@ def work():
     cur.execute("select date from seat")
     for row in cur.fetchall():
         daylist.append(row[0])
-        #print(row[0])
+
     today = datetime.date.today()
-    #print(daylist)
+
     day=today
-    #print(day)
-    #day = today + datetime.timedelta(days=1)
+
     for i in range(7):
         if str(day) not in daylist:
             for i in range(0,24,3):

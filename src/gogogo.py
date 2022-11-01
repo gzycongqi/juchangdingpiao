@@ -17,16 +17,7 @@ from src import dealdate
 dealdate.work()
 list=seat.list
 
-def selectseat():
-    global list
-    seat.list=list
-    app = QApplication(sys.argv)
-    MainWindow = QMainWindow()
-    ui =chooseuse.Ui_Dialog()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    # print(list)
-    sys.exit(app.exec_())
+
 
 
 class chooseWindow(QMainWindow):
@@ -66,6 +57,12 @@ class userworkWindow(QDialog):
         self.userwork_ui.setupUi(self)
 
 
+class seatWindow(QDialog):
+    def __init__(self):
+        QDialog.__init__(self)
+        self.seat_ui = seat.Ui_Dialog()
+        self.seat_ui.setupUi(self)
+
 
 
 
@@ -78,6 +75,10 @@ if __name__ == '__main__':
 
     managerwork=managerworkWindow()
     userwork=userworkWindow()
+    seat=seatWindow()
+
+
+
     # 通过toolButton将两个窗体关联
     managerloggo = choose.choose_ui.pushButton
     managerloggo.clicked.connect(managerlog.show)
@@ -97,6 +98,13 @@ if __name__ == '__main__':
     userjinru = userlog.userlog_ui.pushButton
     userjinru.clicked.connect(userwork.show)
     userjinru.clicked.connect(userlog.close)
+
+    selectseat=userwork.userwork_ui.pushButton
+    selectseat.clicked.connect(seat.show)
+    clo1=seat.seat_ui.pushButton
+    clo1.clicked.connect(seat.close)
+
+
 
 
 

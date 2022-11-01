@@ -9,8 +9,15 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import datetime
+day=""
+time=""
 
+def getday():
+    return day
 
+def gettime():
+    return time
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
@@ -18,15 +25,38 @@ class Ui_Dialog(object):
         self.pushButton = QtWidgets.QPushButton(Dialog)
         self.pushButton.setGeometry(QtCore.QRect(140, 100, 93, 28))
         self.pushButton.setObjectName("pushButton")
+        self.pushButton.clicked.connect(self.clickbutton)
+
+
+
+
         self.comboBox = QtWidgets.QComboBox(Dialog)
         self.comboBox.setGeometry(QtCore.QRect(140, 160, 91, 31))
         self.comboBox.setObjectName("comboBox")
+
+        timelist=[]
+        daylist=[]
+        day = datetime.date.today()
+
+        for i in range(0, 24, 3):
+            time = str(i) + ":00"
+            timelist.append(time)
+        for i in range(7):
+            day = day + datetime.timedelta(days=1)
+            daylist.append(str(day))
+
+        self.comboBox.addItems(daylist)
+
+
+
         self.label = QtWidgets.QLabel(Dialog)
         self.label.setGeometry(QtCore.QRect(50, 170, 72, 15))
         self.label.setObjectName("label")
         self.comboBox_2 = QtWidgets.QComboBox(Dialog)
         self.comboBox_2.setGeometry(QtCore.QRect(140, 220, 87, 31))
         self.comboBox_2.setObjectName("comboBox_2")
+        self.comboBox_2.addItems(timelist)
+
         self.label_2 = QtWidgets.QLabel(Dialog)
         self.label_2.setGeometry(QtCore.QRect(50, 230, 72, 15))
         self.label_2.setObjectName("label_2")
@@ -36,9 +66,7 @@ class Ui_Dialog(object):
         self.chapiao = QtWidgets.QTableView(Dialog)
         self.chapiao.setGeometry(QtCore.QRect(30, 460, 256, 261))
         self.chapiao.setObjectName("chapiao")
-        self.label_3 = QtWidgets.QLabel(Dialog)
-        self.label_3.setGeometry(QtCore.QRect(61, 290, 131, 31))
-        self.label_3.setObjectName("label_3")
+
         self.comboBox_3 = QtWidgets.QComboBox(Dialog)
         self.comboBox_3.setGeometry(QtCore.QRect(450, 540, 91, 31))
         self.comboBox_3.setObjectName("comboBox_3")
@@ -92,7 +120,7 @@ class Ui_Dialog(object):
         self.label.setText(_translate("Dialog", "选择日期"))
         self.label_2.setText(_translate("Dialog", "选择时间"))
         self.pushButton_2.setText(_translate("Dialog", "查询订票信息"))
-        self.label_3.setText(_translate("Dialog", "应付费用"))
+
         self.label_4.setText(_translate("Dialog", "选择日期"))
         self.label_5.setText(_translate("Dialog", "选择时间"))
         self.pushButton_3.setText(_translate("Dialog", "退票"))
@@ -101,3 +129,9 @@ class Ui_Dialog(object):
         self.pushButton_4.setText(_translate("Dialog", "改票"))
         self.label_6.setText(_translate("Dialog", "推荐影片"))
         self.label_9.setText(_translate("Dialog", "热销影片"))
+
+    def clickbutton(self):
+        global day
+        global time
+        day=str(self.comboBox.currentText())
+        time=str(self.comboBox_2.currentText())

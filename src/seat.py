@@ -9,13 +9,36 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import pymysql
+import userwork
+import userlog
+import ast
 list=[]
 count=0
+username=""
+def change(a):
+    global username
+    username=a
+
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         global list
+        global count
+
+        # connect = pymysql.connect(host='localhost',  # 本地数据库
+        #                           user='root',
+        #                           password='gzy158',
+        #                           db='课程设计',
+        #                           charset='utf8')  # 服务器名,账户,密码，数据库名称
+        # cur = connect.cursor()
+        # val=(userwork.getday(),userwork.gettime())
+        # print(val)
+        # cur.execute("""
+        # select * from seat
+        # where date=%s,time=%s
+        # """,val)
+
         Dialog.setObjectName("请选择座位")
         Dialog.resize(722, 610)
         self.pushButton_01 = QtWidgets.QPushButton(Dialog)
@@ -351,331 +374,14 @@ class Ui_Dialog(object):
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_2.clicked.connect(self.clickButton_2)
 
-        if 1 in list:
-            self.pushButton_01.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_01.clicked.connect(self.clickButton_01)
+        self.pushButton_3 = QtWidgets.QPushButton(Dialog)
+        self.pushButton_3.setGeometry(QtCore.QRect(480, 420, 93, 28))
+        self.pushButton_3.setObjectName("pushButton_2")
+        self.pushButton_3.clicked.connect(self.clickButton_3)
 
-        if 2 in list:
-            self.pushButton_02.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_02.clicked.connect(self.clickButton_02)
-
-        if 3 in list:
-            self.pushButton_03.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_03.clicked.connect(self.clickButton_03)
-
-        if 4 in list:
-            self.pushButton_04.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_04.clicked.connect(self.clickButton_04)
-
-        if 5 in list:
-            self.pushButton_05.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_05.clicked.connect(self.clickButton_05)
-
-        if 6 in list:
-            self.pushButton_06.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_06.clicked.connect(self.clickButton_06)
-
-        if 7 in list:
-            self.pushButton_07.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_07.clicked.connect(self.clickButton_07)
-
-        if 8 in list:
-            self.pushButton_08.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_08.clicked.connect(self.clickButton_08)
-
-        if 9 in list:
-            self.pushButton_09.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_09.clicked.connect(self.clickButton_09)
-
-        if 10 in list:
-            self.pushButton_10.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_10.clicked.connect(self.clickButton_10)
-
-        if 11 in list:
-            self.pushButton_11.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_11.clicked.connect(self.clickButton_11)
-
-        if 12 in list:
-            self.pushButton_12.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_12.clicked.connect(self.clickButton_12)
-
-        if 13 in list:
-            self.pushButton_13.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_13.clicked.connect(self.clickButton_13)
-
-        if 14 in list:
-            self.pushButton_14.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_14.clicked.connect(self.clickButton_14)
-
-        if 15 in list:
-            self.pushButton_15.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_15.clicked.connect(self.clickButton_15)
-
-        if 16 in list:
-            self.pushButton_16.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_16.clicked.connect(self.clickButton_16)
-
-        if 17 in list:
-            self.pushButton_17.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_17.clicked.connect(self.clickButton_17)
-
-        if 18 in list:
-            self.pushButton_18.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_18.clicked.connect(self.clickButton_18)
-
-        if 19 in list:
-            self.pushButton_19.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_19.clicked.connect(self.clickButton_19)
-
-        if 20 in list:
-            self.pushButton_20.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_20.clicked.connect(self.clickButton_20)
-
-        if 21 in list:
-            self.pushButton_21.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_21.clicked.connect(self.clickButton_21)
-
-        if 22 in list:
-            self.pushButton_22.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_22.clicked.connect(self.clickButton_22)
-
-        if 23 in list:
-            self.pushButton_23.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_23.clicked.connect(self.clickButton_23)
-
-        if 24 in list:
-            self.pushButton_24.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_24.clicked.connect(self.clickButton_24)
-
-        if 25 in list:
-            self.pushButton_25.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_25.clicked.connect(self.clickButton_25)
-
-        if 26 in list:
-            self.pushButton_26.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_26.clicked.connect(self.clickButton_26)
-
-        if 27 in list:
-            self.pushButton_27.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_27.clicked.connect(self.clickButton_27)
-
-        if 28 in list:
-            self.pushButton_28.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_28.clicked.connect(self.clickButton_28)
-
-        if 29 in list:
-            self.pushButton_29.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_29.clicked.connect(self.clickButton_29)
-
-        if 30 in list:
-            self.pushButton_30.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_30.clicked.connect(self.clickButton_30)
-
-        if 31 in list:
-            self.pushButton_31.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_31.clicked.connect(self.clickButton_31)
-
-        if 32 in list:
-            self.pushButton_32.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_32.clicked.connect(self.clickButton_32)
-
-        if 33 in list:
-            self.pushButton_33.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_33.clicked.connect(self.clickButton_33)
-
-        if 34 in list:
-            self.pushButton_34.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_34.clicked.connect(self.clickButton_34)
-
-        if 35 in list:
-            self.pushButton_35.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_35.clicked.connect(self.clickButton_35)
-
-        if 36 in list:
-            self.pushButton_36.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_36.clicked.connect(self.clickButton_36)
-
-        if 37 in list:
-            self.pushButton_37.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_37.clicked.connect(self.clickButton_37)
-
-        if 38 in list:
-            self.pushButton_38.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_38.clicked.connect(self.clickButton_38)
-
-        if 39 in list:
-            self.pushButton_39.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_39.clicked.connect(self.clickButton_39)
-
-        if 40 in list:
-            self.pushButton_40.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_40.clicked.connect(self.clickButton_40)
-
-        if 41 in list:
-            self.pushButton_41.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_41.clicked.connect(self.clickButton_41)
-
-        if 42 in list:
-            self.pushButton_42.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_42.clicked.connect(self.clickButton_42)
-
-        if 43 in list:
-            self.pushButton_43.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_43.clicked.connect(self.clickButton_43)
-
-        if 44 in list:
-            self.pushButton_44.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_44.clicked.connect(self.clickButton_44)
-
-        if 45 in list:
-            self.pushButton_45.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_45.clicked.connect(self.clickButton_45)
-
-        if 46 in list:
-            self.pushButton_46.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_46.clicked.connect(self.clickButton_46)
-
-        if 47 in list:
-            self.pushButton_47.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_47.clicked.connect(self.clickButton_47)
-
-        if 48 in list:
-            self.pushButton_48.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_48.clicked.connect(self.clickButton_48)
-
-        if 49 in list:
-            self.pushButton_49.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_49.clicked.connect(self.clickButton_49)
-
-        if 50 in list:
-            self.pushButton_50.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_50.clicked.connect(self.clickButton_50)
-
-        if 51 in list:
-            self.pushButton_51.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_51.clicked.connect(self.clickButton_51)
-
-        if 52 in list:
-            self.pushButton_52.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_52.clicked.connect(self.clickButton_52)
-
-        if 53 in list:
-            self.pushButton_53.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_53.clicked.connect(self.clickButton_53)
-
-        if 54 in list:
-            self.pushButton_54.setStyleSheet(
-                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
-        else:
-            self.pushButton_54.clicked.connect(self.clickButton_54)
-
-
+        self.label_2 = QtWidgets.QLabel(Dialog)
+        self.label_2.setGeometry(QtCore.QRect(560, 560, 93, 28))
+        self.label_2.setObjectName("label_2")
 
 
         self.retranslateUi(Dialog)
@@ -746,7 +452,8 @@ class Ui_Dialog(object):
         self.pushButton_54.setText(_translate("Dialog", "54"))
         self.pushButton.setText(_translate("Dialog", "提交"))
 
-        self.pushButton_2.setText(_translate("Dialog", "取消"))
+        self.pushButton_2.setText(_translate("Dialog", "费用"))
+        self.pushButton_3.setText(_translate("Dialog", "查看座位"))
 
     def clickButton_01(self):
         global list
@@ -759,7 +466,7 @@ class Ui_Dialog(object):
             print(count)
         else:
             self.pushButton_01.setStyleSheet(
-                '''QPushButton{background:##FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(1)
             print(list)
             count = count + 1
@@ -777,7 +484,7 @@ class Ui_Dialog(object):
             print(count)
         else:
             self.pushButton_02.setStyleSheet(
-                '''QPushButton{background:##FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(2)
             print(list)
             count = count + 1
@@ -795,7 +502,7 @@ class Ui_Dialog(object):
             print(count)
         else:
             self.pushButton_03.setStyleSheet(
-                '''QPushButton{background:##FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(3)
             print(list)
             count = count + 1
@@ -813,7 +520,7 @@ class Ui_Dialog(object):
             print(count)
         else:
             self.pushButton_04.setStyleSheet(
-                '''QPushButton{background:##FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(4)
             print(list)
             count = count + 1
@@ -831,7 +538,7 @@ class Ui_Dialog(object):
             print(count)
         else:
             self.pushButton_05.setStyleSheet(
-                '''QPushButton{background:##FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(5)
             print(list)
             count = count + 1
@@ -849,7 +556,7 @@ class Ui_Dialog(object):
             print(count)
         else:
             self.pushButton_06.setStyleSheet(
-                '''QPushButton{background:##FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(6)
             print(list)
             count = count + 1
@@ -867,7 +574,7 @@ class Ui_Dialog(object):
             print(count)
         else:
             self.pushButton_07.setStyleSheet(
-                '''QPushButton{background:##FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(7)
             print(list)
             count = count + 1
@@ -885,7 +592,7 @@ class Ui_Dialog(object):
             print(count)
         else:
             self.pushButton_08.setStyleSheet(
-                '''QPushButton{background:##FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(8)
             print(list)
             count = count + 1
@@ -903,7 +610,7 @@ class Ui_Dialog(object):
             print(count)
         else:
             self.pushButton_09.setStyleSheet(
-                '''QPushButton{background:##FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
+                '''QPushButton{background:#FFFF00;border-radius:5px;}QPushButton:hover{background:yellow;}''')
             list.append(9)
             print(list)
             count = count + 1
@@ -1719,8 +1426,397 @@ class Ui_Dialog(object):
             count = count + 1
             print(count)
 
+    #订票
     def clickButton(self):
-        pass
+        global list
+        global username
+        connect = pymysql.connect(host='localhost',  # 本地数据库
+                                  user='root',
+                                  password='gzy158',
+                                  db='课程设计',
+                                  charset='utf8')  # 服务器名,账户,密码，数据库名称
+        cur = connect.cursor()
+        val = (str(list),str(userwork.getday()),str(userwork.gettime()))
+        cur.execute("""
+                update seat
+                set seat=%s
+                where date=%s and time=%s
+                """, val)
+
+
+
+        temp=""
+        cur.execute("""
+                        select * from user
+                        where username=%s
+                        """,username)
+        for row in cur.fetchall():
+            temp=row[3]
+        list1=ast.literal_eval(temp)
+        a=str((str(userwork.getday()),str(userwork.gettime()),str(list)))
+        print(a)
+        list1.append(a)
+
+        print(username)
+        val1=(str(list1),username)
+        cur.execute("""
+                        update user
+                        set ticket=%s
+                        where username=%s
+                        """, val1)
+        connect.commit()
+
+
+
+
 
     def clickButton_2(self):
+        global count
+        self.label_2.setText(str(count*50))
         pass
+
+    def clickButton_3(self):
+        global count
+        list=[]
+        connect = pymysql.connect(host='localhost',  # 本地数据库
+                                  user='root',
+                                  password='gzy158',
+                                  db='课程设计',
+                                  charset='utf8')  # 服务器名,账户,密码，数据库名称
+        cur = connect.cursor()
+        val=(str(userwork.getday()),str(userwork.gettime()))
+        print(val)
+        cur.execute("""
+        select * from seat
+        where date=%s and time=%s
+        """,val)
+        for row in cur.fetchall():
+            a=row[2]
+
+        connect.commit()
+        list=ast.literal_eval(a)
+        print(list)
+
+        if 1 in list:
+            self.pushButton_01.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_01.clicked.connect(self.clickButton_01)
+
+        if 2 in list:
+            self.pushButton_02.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_02.clicked.connect(self.clickButton_02)
+
+        if 3 in list:
+            self.pushButton_03.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_03.clicked.connect(self.clickButton_03)
+
+        if 4 in list:
+            self.pushButton_04.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_04.clicked.connect(self.clickButton_04)
+
+        if 5 in list:
+            self.pushButton_05.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_05.clicked.connect(self.clickButton_05)
+
+        if 6 in list:
+            self.pushButton_06.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_06.clicked.connect(self.clickButton_06)
+
+        if 7 in list:
+            self.pushButton_07.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_07.clicked.connect(self.clickButton_07)
+
+        if 8 in list:
+            self.pushButton_08.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_08.clicked.connect(self.clickButton_08)
+
+        if 9 in list:
+            self.pushButton_09.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_09.clicked.connect(self.clickButton_09)
+
+        if 10 in list:
+            self.pushButton_10.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_10.clicked.connect(self.clickButton_10)
+
+        if 11 in list:
+            self.pushButton_11.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_11.clicked.connect(self.clickButton_11)
+
+        if 12 in list:
+            self.pushButton_12.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_12.clicked.connect(self.clickButton_12)
+
+        if 13 in list:
+            self.pushButton_13.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_13.clicked.connect(self.clickButton_13)
+
+        if 14 in list:
+            self.pushButton_14.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_14.clicked.connect(self.clickButton_14)
+
+        if 15 in list:
+            self.pushButton_15.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_15.clicked.connect(self.clickButton_15)
+
+        if 16 in list:
+            self.pushButton_16.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_16.clicked.connect(self.clickButton_16)
+
+        if 17 in list:
+            self.pushButton_17.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_17.clicked.connect(self.clickButton_17)
+
+        if 18 in list:
+            self.pushButton_18.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_18.clicked.connect(self.clickButton_18)
+
+        if 19 in list:
+            self.pushButton_19.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_19.clicked.connect(self.clickButton_19)
+
+        if 20 in list:
+            self.pushButton_20.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_20.clicked.connect(self.clickButton_20)
+
+        if 21 in list:
+            self.pushButton_21.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_21.clicked.connect(self.clickButton_21)
+
+        if 22 in list:
+            self.pushButton_22.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_22.clicked.connect(self.clickButton_22)
+
+        if 23 in list:
+            self.pushButton_23.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_23.clicked.connect(self.clickButton_23)
+
+        if 24 in list:
+            self.pushButton_24.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_24.clicked.connect(self.clickButton_24)
+
+        if 25 in list:
+            self.pushButton_25.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_25.clicked.connect(self.clickButton_25)
+
+        if 26 in list:
+            self.pushButton_26.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_26.clicked.connect(self.clickButton_26)
+
+        if 27 in list:
+            self.pushButton_27.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_27.clicked.connect(self.clickButton_27)
+
+        if 28 in list:
+            self.pushButton_28.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_28.clicked.connect(self.clickButton_28)
+
+        if 29 in list:
+            self.pushButton_29.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_29.clicked.connect(self.clickButton_29)
+
+        if 30 in list:
+            self.pushButton_30.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_30.clicked.connect(self.clickButton_30)
+
+        if 31 in list:
+            self.pushButton_31.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_31.clicked.connect(self.clickButton_31)
+
+        if 32 in list:
+            self.pushButton_32.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_32.clicked.connect(self.clickButton_32)
+
+        if 33 in list:
+            self.pushButton_33.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_33.clicked.connect(self.clickButton_33)
+
+        if 34 in list:
+            self.pushButton_34.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_34.clicked.connect(self.clickButton_34)
+
+        if 35 in list:
+            self.pushButton_35.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_35.clicked.connect(self.clickButton_35)
+
+        if 36 in list:
+            self.pushButton_36.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_36.clicked.connect(self.clickButton_36)
+
+        if 37 in list:
+            self.pushButton_37.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_37.clicked.connect(self.clickButton_37)
+
+        if 38 in list:
+            self.pushButton_38.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_38.clicked.connect(self.clickButton_38)
+
+        if 39 in list:
+            self.pushButton_39.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_39.clicked.connect(self.clickButton_39)
+
+        if 40 in list:
+            self.pushButton_40.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_40.clicked.connect(self.clickButton_40)
+
+        if 41 in list:
+            self.pushButton_41.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_41.clicked.connect(self.clickButton_41)
+
+        if 42 in list:
+            self.pushButton_42.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_42.clicked.connect(self.clickButton_42)
+
+        if 43 in list:
+            self.pushButton_43.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_43.clicked.connect(self.clickButton_43)
+
+        if 44 in list:
+            self.pushButton_44.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_44.clicked.connect(self.clickButton_44)
+
+        if 45 in list:
+            self.pushButton_45.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_45.clicked.connect(self.clickButton_45)
+
+        if 46 in list:
+            self.pushButton_46.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_46.clicked.connect(self.clickButton_46)
+
+        if 47 in list:
+            self.pushButton_47.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_47.clicked.connect(self.clickButton_47)
+
+        if 48 in list:
+            self.pushButton_48.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_48.clicked.connect(self.clickButton_48)
+
+        if 49 in list:
+            self.pushButton_49.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_49.clicked.connect(self.clickButton_49)
+
+        if 50 in list:
+            self.pushButton_50.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_50.clicked.connect(self.clickButton_50)
+
+        if 51 in list:
+            self.pushButton_51.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_51.clicked.connect(self.clickButton_51)
+
+        if 52 in list:
+            self.pushButton_52.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_52.clicked.connect(self.clickButton_52)
+
+        if 53 in list:
+            self.pushButton_53.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_53.clicked.connect(self.clickButton_53)
+
+        if 54 in list:
+            self.pushButton_54.setStyleSheet(
+                '''QPushButton{background:#FF0000;border-radius:5px;}QPushButton:hover{background:red;}''')
+        else:
+            self.pushButton_54.clicked.connect(self.clickButton_54)

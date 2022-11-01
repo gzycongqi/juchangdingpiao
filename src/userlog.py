@@ -11,10 +11,14 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import pymysql
 
+from src import seat
 
 username=""
 pas=""
 success=0
+
+def getusername():
+    return username
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
 
@@ -59,7 +63,7 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "请登录"))
-        self.label.setText(_translate("Dialog", "管理员登录"))
+        self.label.setText(_translate("Dialog", "用户登录"))
         self.label_2.setText(_translate("Dialog", "请输入用户名"))
         self.label_3.setText(_translate("Dialog", "密码"))
         self.pushButton.setText(_translate("Dialog", "进入"))
@@ -86,6 +90,7 @@ class Ui_Dialog(object):
             connect.commit()
             print(key)
             if (username, pas) in key:
+                seat.change(username)
                 self.label.setText( "登录成功")
                 print("ok")
             else:

@@ -11,6 +11,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import *
 import pymysql
+from PyQt5.QtGui import QStandardItemModel, QStandardItem
+
 
 class Ui_Dialog(object):
 
@@ -64,12 +66,39 @@ class Ui_Dialog(object):
         self.pushButton_4.setObjectName("pushButton_4")
 
 
+
+
+
+        connect = pymysql.connect(host='localhost',  # 本地数据库
+                                  user='root',
+                                  password='gzy158',
+                                  db='课程设计',
+                                  charset='utf8')  # 服务器名,账户,密码，数据库名称
+        cur = connect.cursor()
+        user = []
+        cur.execute("select * from seachorder")
+
+
+
         self.tableView = QtWidgets.QTableView(Dialog)
         self.tableView.setGeometry(QtCore.QRect(440, 100, 256, 221))
         self.tableView.setObjectName("tableView")
+        self.model = QStandardItemModel(0, 3)
+        self.model.setHorizontalHeaderLabels(['用户名', '日期', '时间','座位'])
+        self.tableView.setModel(self.model)
+        self.model.appendRow([QStandardItem("B19041231"),QStandardItem("11-1"),QStandardItem("9:00"),QStandardItem("[21,22]")])
+        for row in cur.fetchall():
+            user.append((row[0], row[1], row[2], row[3]))
+            self.model.appendRow([QStandardItem(row[0]),QStandardItem(row[1]),QStandardItem(row[2]),QStandardItem(row[3])])
+        connect.commit()
+
+
+
         self.pushButton_5 = QtWidgets.QPushButton(Dialog)
         self.pushButton_5.setGeometry(QtCore.QRect(490, 350, 161, 41))
         self.pushButton_5.setObjectName("pushButton_5")
+
+
         self.tableView_2 = QtWidgets.QTableView(Dialog)
         self.tableView_2.setGeometry(QtCore.QRect(440, 420, 256, 192))
         self.tableView_2.setObjectName("tableView_2")
@@ -132,9 +161,9 @@ class Ui_Dialog(object):
                 a=1
         if a==0:
             val=(self.textEdit.toPlainText(),self.textEdit_2.toPlainText(),self.textEdit_3.toPlainText())
-            cur.execute("""INSERT INTO user (username,password,vip)
+            cur.execute("""INSERT INTO user (username,password,vip,ticket)
                                    VALUES
-                                   ( %s, %s,%s )""", val)
+                                   ( %s, %s,%s ,"[]")""", val)
             self.label1.setText("插入成功")
             connect.commit()
 
