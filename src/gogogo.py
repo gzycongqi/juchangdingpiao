@@ -7,7 +7,7 @@ from src import seat
 from src import chooseuse
 from src import userlog
 import managerlog
-import queren
+
 import managerwork
 import userwork
 from chooseuse import Ui_Dialog as choose_Ui # 选择界面的库

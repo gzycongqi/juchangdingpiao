@@ -9,15 +9,20 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from PyQt5 import *
+import pymysql
 
 class Ui_Dialog(object):
+
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(827, 775)
         self.label = QtWidgets.QLabel(Dialog)
         self.label.setGeometry(QtCore.QRect(150, 20, 91, 51))
+        self.label1 = QtWidgets.QLabel(Dialog)
+        self.label1.setGeometry(QtCore.QRect(150, 50, 91, 51))
         self.label.setObjectName("label")
+        self.label1.setObjectName("label1")
         self.textEdit = QtWidgets.QTextEdit(Dialog)
         self.textEdit.setGeometry(QtCore.QRect(120, 110, 151, 41))
         self.textEdit.setObjectName("textEdit")
@@ -36,18 +41,29 @@ class Ui_Dialog(object):
         self.label_4 = QtWidgets.QLabel(Dialog)
         self.label_4.setGeometry(QtCore.QRect(30, 270, 72, 15))
         self.label_4.setObjectName("label_4")
+
         self.pushButton = QtWidgets.QPushButton(Dialog)
-        self.pushButton.setGeometry(QtCore.QRect(100, 330, 121, 31))
+        self.pushButton.setGeometry(QtCore.QRect(100, 390, 121, 31))
         self.pushButton.setObjectName("pushButton")
+        self.pushButton.clicked.connect(self.clickbutton)
+
         self.pushButton_2 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_2.setGeometry(QtCore.QRect(100, 390, 121, 31))
+        self.pushButton_2.setGeometry(QtCore.QRect(100, 340, 121, 31))
         self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_2.clicked.connect(self.clickbutton2)
+
+
         self.pushButton_3 = QtWidgets.QPushButton(Dialog)
         self.pushButton_3.setGeometry(QtCore.QRect(100, 440, 121, 31))
         self.pushButton_3.setObjectName("pushButton_3")
+        self.pushButton_3.clicked.connect(self.clickbutton3)
+
+
         self.pushButton_4 = QtWidgets.QPushButton(Dialog)
         self.pushButton_4.setGeometry(QtCore.QRect(510, 40, 93, 28))
         self.pushButton_4.setObjectName("pushButton_4")
+
+
         self.tableView = QtWidgets.QTableView(Dialog)
         self.tableView.setGeometry(QtCore.QRect(440, 100, 256, 221))
         self.tableView.setObjectName("tableView")
@@ -65,6 +81,7 @@ class Ui_Dialog(object):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "管理员"))
         self.label.setText(_translate("Dialog", "用户信息管理"))
+        self.label1.setText(_translate("Dialog", "状态"))
         self.label_2.setText(_translate("Dialog", "用户名"))
         self.label_3.setText(_translate("Dialog", "密码"))
         self.label_4.setText(_translate("Dialog", "会员等级"))
@@ -73,3 +90,75 @@ class Ui_Dialog(object):
         self.pushButton_3.setText(_translate("Dialog", "修改用户信息"))
         self.pushButton_4.setText(_translate("Dialog", "订单查看"))
         self.pushButton_5.setText(_translate("Dialog", "影片销售统计"))
+
+    #差信息
+    def clickbutton2(self):
+        connect = pymysql.connect(host='localhost',  # 本地数据库
+                                  user='root',
+                                  password='gzy158',
+                                  db='课程设计',
+                                  charset='utf8')  # 服务器名,账户,密码，数据库名称
+        cur = connect.cursor()
+        username=self.textEdit.toPlainText()
+        user=[]
+        cur.execute("select * from user")
+        for row in cur.fetchall():
+            user.append((row[0], row[1],row[2],row[3]))
+        connect.commit()
+        for i in user:
+            if i[0]==username:
+                self.textEdit_2.setText(i[1])
+                self.textEdit_3.setText(i[2])
+                self.label1.setText("查询成功")
+
+    #加用户
+    def clickbutton(self):
+        connect = pymysql.connect(host='localhost',  # 本地数据库
+                                  user='root',
+                                  password='gzy158',
+                                  db='课程设计',
+                                  charset='utf8')  # 服务器名,账户,密码，数据库名称
+        cur = connect.cursor()
+        username=self.textEdit.toPlainText()
+        user=[]
+        cur.execute("select * from user")
+        for row in cur.fetchall():
+            user.append((row[0], row[1],row[2],row[3]))
+        connect.commit()
+        a=0
+        for i in user:
+            if i[0]==username:
+                self.label1.setText('用户名已存在')
+                a=1
+        if a==0:
+            val=(self.textEdit.toPlainText(),self.textEdit_2.toPlainText(),self.textEdit_3.toPlainText())
+            cur.execute("""INSERT INTO user (username,password,vip)
+                                   VALUES
+                                   ( %s, %s,%s )""", val)
+            self.label1.setText("插入成功")
+            connect.commit()
+
+
+
+    #改信息
+    def clickbutton3(self):
+        connect = pymysql.connect(host='localhost',  # 本地数据库
+                                  user='root',
+                                  password='gzy158',
+                                  db='课程设计',
+                                  charset='utf8')  # 服务器名,账户,密码，数据库名称
+        cur = connect.cursor()
+        username=self.textEdit.toPlainText()
+        password=self.textEdit_2.toPlainText()
+        vip=self.textEdit_3.toPlainText()
+        val=(username,password,vip,username)
+        cur.execute("""
+        update user
+        set username=%s,password=%s,vip=%s
+        where username=%s        
+        """,val)
+        connect.commit()
+        self.label1.setText("修改成功")
+
+
+
