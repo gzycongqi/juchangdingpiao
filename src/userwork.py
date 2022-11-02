@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
+import ast
 
+import pymysql
 # Form implementation generated from reading ui file 'lib/userwork.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
@@ -10,9 +12,15 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import datetime
+
+from PyQt5.QtGui import QStandardItemModel, QStandardItem
+
 day=""
 time=""
-
+username=""
+def change(a):
+    global username
+    username=a
 def getday():
     return day
 
@@ -49,6 +57,8 @@ class Ui_Dialog(object):
 
 
 
+
+
         self.label = QtWidgets.QLabel(Dialog)
         self.label.setGeometry(QtCore.QRect(50, 170, 72, 15))
         self.label.setObjectName("label")
@@ -63,9 +73,16 @@ class Ui_Dialog(object):
         self.pushButton_2 = QtWidgets.QPushButton(Dialog)
         self.pushButton_2.setGeometry(QtCore.QRect(90, 390, 121, 28))
         self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_2.clicked.connect(self.clickbutton2)
+
         self.chapiao = QtWidgets.QTableView(Dialog)
         self.chapiao.setGeometry(QtCore.QRect(30, 460, 256, 261))
         self.chapiao.setObjectName("chapiao")
+        self.model = QStandardItemModel(0, 3)
+        self.model.setHorizontalHeaderLabels(['日期', '时间', '座位'])
+        self.chapiao.setModel(self.model)
+
+
 
         self.comboBox_3 = QtWidgets.QComboBox(Dialog)
         self.comboBox_3.setGeometry(QtCore.QRect(450, 540, 91, 31))
@@ -82,6 +99,8 @@ class Ui_Dialog(object):
         self.pushButton_3 = QtWidgets.QPushButton(Dialog)
         self.pushButton_3.setGeometry(QtCore.QRect(400, 680, 93, 28))
         self.pushButton_3.setObjectName("pushButton_3")
+        self.pushButton_3.clicked.connect(self.clickbutton3)
+
         self.label_7 = QtWidgets.QLabel(Dialog)
         self.label_7.setGeometry(QtCore.QRect(650, 550, 72, 15))
         self.label_7.setObjectName("label_7")
@@ -97,6 +116,12 @@ class Ui_Dialog(object):
         self.pushButton_4 = QtWidgets.QPushButton(Dialog)
         self.pushButton_4.setGeometry(QtCore.QRect(710, 680, 93, 28))
         self.pushButton_4.setObjectName("pushButton_4")
+        self.pushButton_4.clicked.connect(self.clickbutton4)
+        self.pushButton_4.clicked.connect(self.clickbutton3)
+
+        self.comboBox_6.addItems(daylist)
+        self.comboBox_5.addItems(timelist)
+
         self.tuijian = QtWidgets.QTableView(Dialog)
         self.tuijian.setGeometry(QtCore.QRect(340, 80, 256, 192))
         self.tuijian.setObjectName("tuijian")
@@ -135,3 +160,133 @@ class Ui_Dialog(object):
         global time
         day=str(self.comboBox.currentText())
         time=str(self.comboBox_2.currentText())
+
+    def clickbutton2(self):
+        global username
+        connect = pymysql.connect(host='localhost',  # 本地数据库
+                                  user='root',
+                                  password='gzy158',
+                                  db='课程设计',
+                                  charset='utf8')  # 服务器名,账户,密码，数据库名称
+        cur = connect.cursor()
+        #val = (str(list), str(getday()), str(gettime()))
+        # cur.execute("""
+        #                 update seat
+        #                 set seat=%s
+        #                 where date=%s and time=%s
+        #                 """, val)
+
+        temp = ""
+        cur.execute("""
+                                select * from user
+                                where username=%s
+                                """, username)
+        for row in cur.fetchall():
+            temp = row[3]
+        list1 = ast.literal_eval(temp)
+
+        list2=[]
+        for i in list1:
+
+            j=eval(i)
+            list2.append(j)
+
+
+        daylist1=[]
+        timelist1=[]
+        for j in list2:
+            daylist1.append(j[0])
+            timelist1.append(j[1])
+            self.model.appendRow(
+                [QStandardItem(j[0]), QStandardItem(j[1]), QStandardItem(j[2])])
+
+        self.comboBox_3.addItems(daylist1)
+        self.comboBox_4.addItems(timelist1)
+
+
+
+
+
+
+    def clickbutton3(self):
+        global username
+        connect = pymysql.connect(host='localhost',  # 本地数据库
+                                      user='root',
+                                      password='gzy158',
+                                      db='课程设计',
+                                      charset='utf8')  # 服务器名,账户,密码，数据库名称
+        cur = connect.cursor()
+
+
+        temp = ""
+        cur.execute("""
+                                            select * from user
+                                            where username=%s
+                                            """, username)
+        for row in cur.fetchall():
+            temp = row[3]
+        list1 = ast.literal_eval(temp)
+
+        list2 = []
+        for i in list1:
+            j = eval(i)
+            list2.append(j)
+        print(list2)
+        print(list2[0][1])
+
+
+        #用户删除后还剩的订单
+        list3=[]
+
+
+
+        for j in list2:
+            if (j[0]!=self.comboBox_3.currentText())|(j[1]!=self.comboBox_4.currentText()):
+                list3.append(j)
+        shanchuan=""
+        for j in list2:
+            if (j[0]==self.comboBox_3.currentText())&(j[1]==self.comboBox_4.currentText()):
+                shanchuan=j[2]
+        #用户要删除的座位
+        list4=eval(shanchuan)
+        print(shanchuan)
+
+        a=str(list3)
+
+        val = (a, username)
+        cur.execute("""
+                            update user
+                            set ticket=%s
+                            where username=%s
+                            """, val)
+
+        cur.execute("""select * from seat
+                       where date=%s and time=%s
+                       """, (self.comboBox_3.currentText(),self.comboBox_4.currentText()))
+
+        shenpiao=""
+        for row in cur.fetchall():
+            shenpiao=row[2]
+        #座位中的已经订购的位置
+        list5=eval(shenpiao)
+        list7=[]
+        for i in list5:
+            if i not in list4:
+                list7.append(i)
+
+        val5=(str(list7),self.comboBox_3.currentText(),self.comboBox_4.currentText())
+        cur.execute("""
+                                    update seat
+                                    set seat=%s
+                                    where date=%s and time=%s
+                                    """, val5)
+
+        connect.commit()
+
+
+    def clickbutton4(self):
+        global day
+        global time
+        day=str(self.comboBox_6.currentText())
+        time=str(self.comboBox_5.currentText())
+

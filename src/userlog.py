@@ -12,6 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import pymysql
 
 from src import seat
+import userwork
 
 username=""
 pas=""
@@ -91,6 +92,7 @@ class Ui_Dialog(object):
             print(key)
             if (username, pas) in key:
                 seat.change(username)
+                userwork.change(username)
                 self.label.setText( "登录成功")
                 print("ok")
             else:

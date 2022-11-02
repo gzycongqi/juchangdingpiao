@@ -104,6 +104,9 @@ if __name__ == '__main__':
     clo1=seat.seat_ui.pushButton
     clo1.clicked.connect(seat.close)
 
+    gaipiao=userwork.userwork_ui.pushButton_4
+    gaipiao.clicked.connect(seat.show)
+
 
 
 
