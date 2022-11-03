@@ -122,15 +122,44 @@ class Ui_Dialog(object):
         self.comboBox_6.addItems(daylist)
         self.comboBox_5.addItems(timelist)
 
-        self.tuijian = QtWidgets.QTableView(Dialog)
-        self.tuijian.setGeometry(QtCore.QRect(340, 80, 256, 192))
-        self.tuijian.setObjectName("tuijian")
+
+
+
+
+
+
+
+
         self.label_6 = QtWidgets.QLabel(Dialog)
         self.label_6.setGeometry(QtCore.QRect(440, 50, 72, 15))
         self.label_6.setObjectName("label_6")
-        self.rexiao = QtWidgets.QTableView(Dialog)
-        self.rexiao.setGeometry(QtCore.QRect(660, 80, 256, 192))
-        self.rexiao.setObjectName("rexiao")
+
+
+
+
+        connect = pymysql.connect(host='localhost',  # 本地数据库
+                                  user='root',
+                                  password='gzy158',
+                                  db='课程设计',
+                                  charset='utf8')  # 服务器名,账户,密码，数据库名称
+        cur = connect.cursor()
+        user = []
+        cur.execute("select * from seat")
+
+        self.tableView = QtWidgets.QTableView(Dialog)
+        self.tableView.setGeometry(QtCore.QRect(340, 80, 556, 292))
+        self.tableView.setObjectName("tableView")
+        self.model1 = QStandardItemModel(0, 4)
+        self.model1.setHorizontalHeaderLabels(['剧名', '日期', '时间','座位数'])
+        self.tableView.setModel(self.model1)
+
+        for row in cur.fetchall():
+
+            self.model1.appendRow(
+                [QStandardItem(row[4]), QStandardItem(row[0]), QStandardItem(row[1]), QStandardItem(row[3])])
+        connect.commit()
+
+
         self.label_9 = QtWidgets.QLabel(Dialog)
         self.label_9.setGeometry(QtCore.QRect(750, 40, 72, 15))
         self.label_9.setObjectName("label_9")

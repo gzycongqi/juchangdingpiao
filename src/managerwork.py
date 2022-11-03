@@ -97,11 +97,18 @@ class Ui_Dialog(object):
         self.pushButton_5 = QtWidgets.QPushButton(Dialog)
         self.pushButton_5.setGeometry(QtCore.QRect(490, 350, 161, 41))
         self.pushButton_5.setObjectName("pushButton_5")
+        self.pushButton_5.clicked.connect(self.clickbutton5)
+
 
 
         self.tableView_2 = QtWidgets.QTableView(Dialog)
         self.tableView_2.setGeometry(QtCore.QRect(440, 420, 256, 192))
         self.tableView_2.setObjectName("tableView_2")
+        self.model2 = QStandardItemModel(0, 2)
+        self.model2.setHorizontalHeaderLabels(['剧名', '销售额'])
+        self.tableView_2.setModel(self.model2)
+
+
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -189,5 +196,25 @@ class Ui_Dialog(object):
         connect.commit()
         self.label1.setText("修改成功")
 
+    def clickbutton5(self):
+        connect = pymysql.connect(host='localhost',  # 本地数据库
+                                  user='root',
+                                  password='gzy158',
+                                  db='课程设计',
+                                  charset='utf8')  # 服务器名,账户,密码，数据库名称
+        cur = connect.cursor()
 
+
+
+        cur.execute("""select * from opera""")
+
+        for row in cur.fetchall():
+            name=row[0]
+            price=float(row[1])*int(row[2])*int(row[3])
+            self.model2.appendRow([QStandardItem(str(name)),QStandardItem(str(price))])
+
+
+
+
+        connect.commit()
 

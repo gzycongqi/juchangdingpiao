@@ -1443,6 +1443,7 @@ class Ui_Dialog(object):
                         """, val0)
         for row in cur.fetchall():
             a=int(row[3])
+            b=row[4]
         a=a-count
         val = (str(list),str(a),str(userwork.getday()),str(userwork.gettime()))
         cur.execute("""
@@ -1450,6 +1451,20 @@ class Ui_Dialog(object):
                 set seat=%s,count=%s
                 where date=%s and time=%s
                 """, val)
+
+        cur.execute("""
+                                select * from opera
+                                where name=%s
+                                """, b)
+        for row in cur.fetchall():
+            c=row[3]
+        shuliang=str(count+int(row[3]))
+        val5=(shuliang,b)
+        cur.execute("""
+                        update opera
+                        set count=%s
+                        where name=%s
+                        """, val5)
 
         val3=(username,userwork.getday(),userwork.gettime(),count)
 
@@ -1487,7 +1502,30 @@ class Ui_Dialog(object):
 
     def clickButton_2(self):
         global count
-        self.label_2.setText(str(count*50))
+        connect = pymysql.connect(host='localhost',  # 本地数据库
+                                  user='root',
+                                  password='gzy158',
+                                  db='课程设计',
+                                  charset='utf8')  # 服务器名,账户,密码，数据库名称
+        cur = connect.cursor()
+
+        val0 = (userwork.getday(), userwork.gettime())
+        cur.execute("""
+                                select * from seat
+                                where date=%s and time=%s
+                                """, val0)
+        for row in cur.fetchall():
+            b1 = row[4]
+
+        cur.execute("""
+                        select * from opera
+                        where name=%s
+                        """, b1)
+        for row in cur.fetchall():
+            discount=float(row[1])
+            price=int(row[2])
+        print(count)
+        self.label_2.setText(str(count*price*discount))
         pass
 
     def clickButton_3(self):
