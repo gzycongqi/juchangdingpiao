@@ -1436,13 +1436,28 @@ class Ui_Dialog(object):
                                   db='课程设计',
                                   charset='utf8')  # 服务器名,账户,密码，数据库名称
         cur = connect.cursor()
-        val = (str(list),str(userwork.getday()),str(userwork.gettime()))
+        val0=(userwork.getday(),userwork.gettime())
+        cur.execute("""
+                        select * from seat
+                        where date=%s and time=%s
+                        """, val0)
+        for row in cur.fetchall():
+            a=int(row[3])
+        a=a-count
+        val = (str(list),str(a),str(userwork.getday()),str(userwork.gettime()))
         cur.execute("""
                 update seat
-                set seat=%s
+                set seat=%s,count=%s
                 where date=%s and time=%s
                 """, val)
 
+        val3=(username,userwork.getday(),userwork.gettime(),count)
+
+        cur.execute("""
+                        insert into seachorder(username,day,time,count)
+                        values
+                        (%s,%s,%s,%s)
+                        """, val3)
 
 
         temp=""

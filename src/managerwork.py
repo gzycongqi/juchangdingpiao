@@ -86,7 +86,7 @@ class Ui_Dialog(object):
         self.model = QStandardItemModel(0, 3)
         self.model.setHorizontalHeaderLabels(['用户名', '日期', '时间','座位'])
         self.tableView.setModel(self.model)
-        self.model.appendRow([QStandardItem("B19041231"),QStandardItem("11-1"),QStandardItem("9:00"),QStandardItem("[21,22]")])
+
         for row in cur.fetchall():
             user.append((row[0], row[1], row[2], row[3]))
             self.model.appendRow([QStandardItem(row[0]),QStandardItem(row[1]),QStandardItem(row[2]),QStandardItem(row[3])])

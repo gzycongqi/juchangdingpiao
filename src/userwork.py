@@ -183,7 +183,7 @@ class Ui_Dialog(object):
         list2=[]
         for i in list1:
 
-            j=eval(i)
+            j=eval(str(i))
             list2.append(j)
 
 
