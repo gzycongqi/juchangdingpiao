@@ -15,6 +15,8 @@ import pymysql
 username=""
 pas=""
 success=0
+def getsuccess():
+    return success
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
 
@@ -23,10 +25,7 @@ class Ui_Dialog(object):
         #self.setWindowFlags(QtCore.Qt.WindowMinimizeButtonHint)
 
 
-        #进入
-        self.pushButton = QtWidgets.QPushButton(Dialog)
-        self.pushButton.setGeometry(QtCore.QRect(100, 480, 101, 32))
-        self.pushButton.setObjectName("pushButton")
+
 
         # 登录
         self.pushButton_1 = QtWidgets.QPushButton(Dialog)
@@ -48,9 +47,14 @@ class Ui_Dialog(object):
         self.label_3 = QtWidgets.QLabel(Dialog)
         self.label_3.setGeometry(QtCore.QRect(30, 290, 72, 15))
         self.label_3.setObjectName("label_3")
-        self.password = QtWidgets.QTextEdit(Dialog)
-        self.password.setGeometry(QtCore.QRect(110, 280, 171, 31))
-        self.password.setObjectName("password")
+
+
+
+        self.lineEdit = QtWidgets.QLineEdit(Dialog)
+        self.lineEdit.setGeometry(QtCore.QRect(110, 280, 171, 31))
+        self.lineEdit.setText("")
+        self.lineEdit.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.lineEdit.setObjectName("lineEdit")
 
         self.retranslateUi(Dialog)
 
@@ -62,7 +66,7 @@ class Ui_Dialog(object):
         self.label.setText(_translate("Dialog", "管理员登录"))
         self.label_2.setText(_translate("Dialog", "请输入用户名"))
         self.label_3.setText(_translate("Dialog", "密码"))
-        self.pushButton.setText(_translate("Dialog", "进入"))
+
         self.pushButton_1.setText(_translate("Dialog", "登录"))
 
     def clickButton(self):
@@ -71,7 +75,8 @@ class Ui_Dialog(object):
             global success
             username=self.user.toPlainText()
             print(username)
-            pas=self.password.toPlainText()
+
+            pas=self.lineEdit.text()
             print(pas)
             key=[]
             connect = pymysql.connect(host='localhost',  # 本地数据库
@@ -88,6 +93,7 @@ class Ui_Dialog(object):
             if (username, pas) in key:
                 self.label.setText( "登录成功")
                 print("ok")
+                success=1
             else:
                 self.label.setText("登录失败")
 

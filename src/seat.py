@@ -1477,6 +1477,171 @@ class Ui_Dialog(object):
 
     def clickButton_3(self):
         global count
+
+
+        self.pushButton_01.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_02.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_03.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_04.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_05.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_06.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_07.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_08.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_09.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_10.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_11.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_12.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_13.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_14.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_15.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_16.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_17.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_18.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_19.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_20.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_21.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_22.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_23.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_24.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_25.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_26.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_27.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_28.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_29.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_30.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_31.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_32.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_33.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_34.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_35.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_36.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_37.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_38.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_39.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_40.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_41.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_42.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_43.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_44.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_45.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_46.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_47.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_48.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_49.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_50.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_51.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_52.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_53.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+        self.pushButton_54.setStyleSheet(
+            '''QPushButton{background:#42E61A;border-radius:5px;}QPushButton:hover{background:green;}''')
+
+
         list=[]
         connect = pymysql.connect(host='localhost',  # 本地数据库
                                   user='root',

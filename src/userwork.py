@@ -169,12 +169,7 @@ class Ui_Dialog(object):
                                   db='课程设计',
                                   charset='utf8')  # 服务器名,账户,密码，数据库名称
         cur = connect.cursor()
-        #val = (str(list), str(getday()), str(gettime()))
-        # cur.execute("""
-        #                 update seat
-        #                 set seat=%s
-        #                 where date=%s and time=%s
-        #                 """, val)
+
 
         temp = ""
         cur.execute("""
@@ -194,6 +189,7 @@ class Ui_Dialog(object):
 
         daylist1=[]
         timelist1=[]
+        self.model.clear()
         for j in list2:
             daylist1.append(j[0])
             timelist1.append(j[1])
